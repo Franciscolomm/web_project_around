@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Galería de arte TripleTen" />
+    <meta name="author" content="Mayté Arias" />
+    <meta name="keywords" content="html, css, javascript" />
+    <title>Alrededor de los EEUU</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <img
+          src="./images/Logo.png"
+          alt="White logo"
+          class="header__logo"
+        />
+      </header>
+
+      <section class="profile">
+        <img
+          src="./images/jacques.jpg"
+          alt="Jacques Cousteau"
+          class="profile__image"
+        />
+
+        <div class="profile__info">
+          <h1 class="profile__name">Jacques Cousteau</h1>
+          <p class="profile__role">Explorador</p>
+          <button type="button" class="profile__edit-button">
+            <img
+              src="/images/Edit Button.png"
+              alt="Edit"
+              class="profile__edit-image"
+            />
+          </button>
+        </div>
+
+        <button type="button" class="profile__add-button">
+          <img
+            src="/images/Add Button.png"
+            alt="Add"
+            class="profile__add-image"
+          />
+        </button>
+      </section>
+
+      <section class="gallery">
+        <div class="gallery__frame">
+          <img
+            src="/images/Yosemite.jpg"
+            alt="Yosemite landscape"
+            class="gallery__image"
+          />
+          <p class="gallery__text">Valle de Yosemite</p>
+          <span class="gallery__like-button heart">♡</span>
+        </div>
+
+        <div class="gallery__frame">
+          <img
+            src="/images/louise.png"
+            alt="Louise landscape"
+            class="gallery__image"
+          />
+          <p class="gallery__text">Lago Louise</p>
+          <span class="gallery__like-button heart">♡</span>
+        </div>
+
+        <div class="gallery__frame">
+          <img
+            src="/images/calvas.png"
+            alt="Montañas calvas landscape"
+            class="gallery__image"
+          />
+          <p class="gallery__text">Montañas Calvas</p>
+          <span class="gallery__like-button heart">♡</span>
+        </div>
+
+        <div class="gallery__frame">
+          <img
+            src="/images/latemar.png"
+            alt="Latemar landscape"
+            class="gallery__image"
+          />
+          <p class="gallery__text">Latemar</p>
+          <span class="gallery__like-button heart">♡</span>
+        </div>
+
+        <div class="gallery__frame">
+          <img
+            src="/images/vanois.png"
+            alt="Vanois landscape"
+            class="gallery__image"
+          />
+          <p class="gallery__text">Vanois National Park</p>
+          <span class="gallery__like-button heart">♡</span>
+        </div>
+
+        <div class="gallery__frame">
+          <img
+            src="/images/di braies.png"
+            alt="Li braies landscape"
+            class="gallery__image"
+          />
+          <p class="gallery__text">Lago di Braies</p>
+          <span class="gallery__like-button heart">♡</span>
+        </div>
+      </section>
+
+      <footer class="footer">© 2025 Around The U.S.</footer>
+
+      <div class="popup popup_show">
+        <div class="popup__content">
+          <h2 class="popup__content-title">Editar perfil</h2>
+          <form class="popup__form">
+            <input
+              type="text"
+              name="Nombre"
+              placeholder="Nombre"
+              class="popup__name popup__input"
+            />
+            <input
+              type="text"
+              name="Acerca"
+              placeholder="Acerca de mi"
+              class="popup__about popup__input"
+            />
+            <button type="submit" class="popup__save-button">Guardar</button>
+          </form>
+          <button class="popup__close-button"></button>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
