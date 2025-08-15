@@ -9,19 +9,34 @@ const aboutInput = document.querySelector(".popup__about");
 const profileName = document.querySelector(".profile__name");
 const profileRole = document.querySelector(".profile__role");
 
-// Abrir popup y rellenar inputs
+// Seleccionamos el formulario
+const form = document.querySelector(".popup__form");
+
+// Abrir popup y rellenar inputs con valores actuales
 editButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   aboutInput.value = profileRole.textContent;
   popup.classList.add("popup_show");
 });
 
-// Cerrar el popup
+// Cerrar el popup al dar click en el botón cerrar
 closeButton.addEventListener("click", () => {
   popup.classList.remove("popup_show");
 });
 
-// Like
+// Guardar cambios y cerrar popup
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Evita recargar la página
+
+  // Actualizar datos del perfil
+  profileName.textContent = nameInput.value;
+  profileRole.textContent = aboutInput.value;
+
+  // Cerrar popup
+  popup.classList.remove("popup_show");
+});
+
+// Like (corazón)
 const hearts = document.querySelectorAll(".heart");
 
 hearts.forEach((heart) => {
