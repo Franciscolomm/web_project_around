@@ -70,7 +70,7 @@
   cursor: pointer;
 }
 
-/* Imagen popup */
+
 .popup__content-image {
   background: transparent;
   display: flex;
@@ -93,14 +93,14 @@
   font-size: 14px;
 }
 
-/* TABLET */
+
 @media screen and (min-width: 545px) and (max-width: 1023px) {
   .popup__content {
     width: 300px;
   }
 }
 
-/* MÓVIL */
+
 @media screen and (min-width: 320px) and (max-width: 544px) {
   .popup__content {
     width: 260px;
