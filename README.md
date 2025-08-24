@@ -1,3 +1,3 @@
 # Tripleten web_project_around
-https://franciscolomm.github.io/web_project_around/ Sprint 7
-En este sprint empezamos a trabajar con codigo javascript y conectar este con el DOM para que tenga funcionalidad el codigo conectandolo con el diseño HTML Y CSS sin afectar la pagina
+https://franciscolomm.github.io/web_project_around/ Sprint 8
+En este sprint dominamos mas javascript, las funciones y la logica para que el codigo funcione correctamente en diversos aspectos
