@@ -1,4 +1,3 @@
-
 const initialCards = [
   { name: "Valle de Yosemite", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg" },
   { name: "Lago Louise", link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg" },
@@ -19,7 +18,6 @@ const popupBigImage = imagePopup.querySelector(".popup__big-image");
 const popupCaption = imagePopup.querySelector(".popup__caption");
 const imagePopupCloseButton = imagePopup.querySelector(".popup__close-button");
 
-
 const profileName = document.querySelector(".profile__name");
 const profileRole = document.querySelector(".profile__role");
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -29,14 +27,13 @@ const editProfileCloseButton = editProfilePopup.querySelector(".popup__close-but
 const nameInput = editProfileForm.querySelector(".popup__name");
 const aboutInput = editProfileForm.querySelector(".popup__about");
 
-
 function openPopup(popup) {
   popup.classList.add("popup_show");
 }
+
 function closePopup(popup) {
   popup.classList.remove("popup_show");
 }
-
 
 function createCard(name, link) {
   const cardElement = document.createElement("div");
@@ -49,18 +46,15 @@ function createCard(name, link) {
     <span class="heart">&#10084;</span>
   `;
 
-
   const likeButton = cardElement.querySelector(".heart");
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("liked");
   });
 
-
   const deleteButton = cardElement.querySelector(".gallery__delete-button");
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-
 
   const image = cardElement.querySelector(".gallery__image");
   image.addEventListener("click", () => {
@@ -72,7 +66,6 @@ function createCard(name, link) {
 
   return cardElement;
 }
-
 
 initialCards.forEach(card => {
   const cardElement = createCard(card.name, card.link);
@@ -97,11 +90,9 @@ addCardForm.addEventListener("submit", (evt) => {
   closePopup(addCardPopup);
 });
 
-
 imagePopupCloseButton.addEventListener("click", () => {
   closePopup(imagePopup);
 });
-
 
 editProfileButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
@@ -119,4 +110,22 @@ editProfileForm.addEventListener("submit", (evt) => {
 editProfileCloseButton.addEventListener("click", () => {
   closePopup(editProfilePopup);
 });
+
+document.querySelectorAll(".popup").forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target === popup) {
+      closePopup(popup);
+    }
+  });
+});
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_show");
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
+});
+
 

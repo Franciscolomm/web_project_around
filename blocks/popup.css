@@ -70,7 +70,6 @@
   cursor: pointer;
 }
 
-
 .popup__content-image {
   background: transparent;
   display: flex;
@@ -93,13 +92,28 @@
   font-size: 14px;
 }
 
+/* ---- VALIDACIÓN ---- */
+.popup__error {
+  color: red;
+  font-size: 12px;
+  min-height: 14px;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__button_disabled {
+  background-color: #e5e5e5;
+  color: #a0a0a0;
+  cursor: not-allowed;
+}
 
 @media screen and (min-width: 545px) and (max-width: 1023px) {
   .popup__content {
     width: 300px;
   }
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 544px) {
   .popup__content {
@@ -109,3 +123,4 @@
     font-size: 20px;
   }
 }
+
