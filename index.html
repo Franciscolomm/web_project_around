@@ -3,109 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Galería de arte TripleTen" />
-    <meta name="author" content="Mayté Arias" />
+    <meta name="description" content="Alrededor de los EE.UU." />
+    <meta name="author" content="Francisco Lomm" />
     <meta name="keywords" content="html, css, javascript" />
-    <title>Alrededor de los EEUU</title>
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Alrededor de los EE.UU.</title>
+    <link rel="stylesheet" href="./page/index.css" />
   </head>
-  <body class="body">
+  <body>
     <div class="page">
+      <div class="popup">
+        <div class="popup__container">
+          <button type="button" class="popup__button popup__button_close">
+            &#x1F7A9;
+          </button>
+          <div class="popup__images">
+            <div class="popup__content-image">
+              <img class="popup__image" src="#" alt="" />
+            </div>
+            <div class="popup__paragraph-content">
+              <p class="popup__paragraph"></p>
+            </div>
+          </div>
+          <form class="popup__form form-edit" novalidate>
+            <h2 class="popup__subtitle">Editar perfil</h2>
+            <fieldset class="popup__content">
+              <label class="popup__field">
+                <input
+                  type="text"
+                  class="popup__input popup__input_name"
+                  placeholder="Nombre"
+                  minlength="2"
+                  maxlength="40"
+                  id="name-input"
+                  required
+                />
+                <span class="popup__input-error name-input-error"></span>
+              </label>
+              <label class="popup__field">
+                <input
+                  type="text"
+                  class="popup__input popup__input_about"
+                  placeholder="Acerca de mi"
+                  minlength="2"
+                  maxlength="200"
+                  id="about-input"
+                  required
+                />
+                <span class="popup__input-error about-input-error"></span>
+              </label>
+              <button type="submit" class="popup__button popup__button_save">
+                Guardar
+              </button>
+            </fieldset>
+          </form>
+          <form class="popup__form form-add" novalidate>
+            <h2 class="popup__subtitle">Nuevo lugar</h2>
+            <fieldset class="popup__content">
+              <label class="popup__field">
+                <input
+                  type="text"
+                  class="popup__input popup__input_title"
+                  placeholder="Titulo"
+                  minlength="2"
+                  maxlength="30"
+                  id="title-input"
+                  required
+                />
+                <span class="popup__input-error title-input-error"></span>
+              </label>
+              <label class="popup__field">
+                <input
+                  type="url"
+                  class="popup__input popup__input_url"
+                  placeholder="URL a la imagen"
+                  id="url-input"
+                  required
+                />
+                <span class="popup__input-error url-input-error"></span>
+              </label>
+              <button type="submit" class="popup__button popup__button_add">
+                Guardar
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
       <header class="header">
-        <img src="./images/Logo.png" alt="White logo" class="header__logo" />
+        <img src="./images/Logo.png" alt="logo-page" class="header__image" />
       </header>
-
-      <section class="profile">
-        <img src="./images/jacques.jpg" alt="Jacques Cousteau" class="profile__image" />
-        <div class="profile__info">
-          <h1 class="profile__name">Jacques Cousteau</h1>
-          <p class="profile__role">Explorador</p>
-          <button type="button" class="profile__edit-button">
-            <img src="/images/Edit Button.png" alt="Edit" class="profile__edit-image" />
+      <main class="main">
+        <div class="main__profile">
+          <div class="main__content-image">
+            <img
+              src="./images/francisco image.jpg"
+              alt="profile-image"
+              class="main__profile-image"
+            />
+          </div>
+          <div class="main__content-paragraph">
+            <p class="main__paragraph main__paragraph_name">Francisco Lomm</p>
+            <p class="main__paragraph main__paragraph_about">Estudiante</p>
+            <button type="button" class="main__button main__button_edit">
+              &#x1F58C;
+            </button>
+          </div>
+          <button type="button" class="main__button main__button_add">
+            &#x1F7A3;
           </button>
         </div>
-        <button type="button" class="profile__add-button">
-          <img src="/images/Add Button.png" alt="Add" class="profile__add-image" />
-        </button>
-      </section>
-
-      <section class="gallery"></section>
-
-      <footer class="footer">© 2025 Around The U.S.</footer>
-
-      <div class="popup popup_edit">
-        <div class="popup__content">
-          <h2 class="popup__content-title">Editar perfil</h2>
-          <form class="popup__form popup__form-edit" novalidate>
-            <input
-              type="text"
-              name="Nombre"
-              placeholder="Nombre"
-              class="popup__name popup__input"
-              minlength="2"
-              maxlength="40"
-              required
-            />
-            <span class="popup__error"></span>
-
-            <input
-              type="text"
-              name="Acerca"
-              placeholder="Acerca de mi"
-              class="popup__about popup__input"
-              minlength="2"
-              maxlength="200"
-              required
-            />
-            <span class="popup__error"></span>
-
-            <button type="submit" class="popup__button popup__save-button">Guardar</button>
-          </form>
-          <button class="popup__close-button"></button>
+        <div class="main__gallery"></div>
+      </main>
+      <template id="main__template">
+        <div class="main__gallery-card">
+          <img class="main__gallery-image" />
+          <button
+            type="button"
+            class="main__button main__button_trash"
+          ></button>
+          <div class="main__gallery-content">
+            <p class="main__gallery-paragraph"></p>
+            <button
+              type="button"
+              class="main__button main__button_like"
+            ></button>
+          </div>
         </div>
-      </div>
-
-      <div class="popup popup_add-card">
-        <div class="popup__content">
-          <h2 class="popup__content-title">Nueva tarjeta</h2>
-          <form class="popup__form popup__form-add" novalidate>
-            <input
-              type="text"
-              name="title"
-              placeholder="Título"
-              class="popup__input popup__input-title"
-              minlength="2"
-              maxlength="30"
-              required
-            />
-            <span class="popup__error"></span>
-
-            <input
-              type="url"
-              name="link"
-              placeholder="Enlace de la imagen"
-              class="popup__input popup__input-link"
-              required
-            />
-            <span class="popup__error"></span>
-
-            <button type="submit" class="popup__button popup__save-button">Crear</button>
-          </form>
-          <button class="popup__close-button"></button>
-        </div>
-      </div>
-
-      <div class="popup popup_image">
-        <div class="popup__content popup__content-image">
-          <button class="popup__close-button"></button>
-          <img src="" alt="" class="popup__big-image" />
-          <p class="popup__caption"></p>
-        </div>
-      </div>
+      </template>
+      <footer class="footer">
+        <p class="footer__copyright">&#x00a9; 2025 Around The U.S.</p>
+      </footer>
     </div>
-
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./page/index.js"></script>
   </body>
 </html>
